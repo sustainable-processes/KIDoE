@@ -1,0 +1,1065 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#"
+     xml:base="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasAssociatedGasLaw -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasAssociatedGasLaw">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasAssociatedSolidLaw -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasAssociatedSolidLaw">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasDifferentialModelVariable -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasDifferentialModelVariable">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ModelVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasDimension -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasDimension">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dimension"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasIntegralInitialValue -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasIntegralInitialValue">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ModelVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasIntegralModelVariable -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasIntegralModelVariable">
+        <rdfs:domain rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#StateVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasIntegralUpperLimit -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasIntegralUpperLimit">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ModelVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasLaw -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasLaw">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasMetric -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasMetric">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasModelVariable -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasModelVariable">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ModelVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasOptionalModelVariable -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasOptionalModelVariable">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ModelVariable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasPhenomenon -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasPhenomenon">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Phenomenon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasUnit -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasUnit">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#isAssociatedWith -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#isAssociatedWith">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Phenomenon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#relatesToFlowPattern -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#relatesToFlowPattern">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#FlowPattern"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#relatesToMassEqulibriumPhenomenon -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#relatesToMassEqulibriumPhenomenon">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#MassEquilibriumPhenomenon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#relatesToMassTransportPhenomenon -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#relatesToMassTransportPhenomenon">
+        <rdfs:range rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#MassTransportPhenomenon"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasDOI -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasDOI">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasFormula -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasFormula">
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasIntegratedFormula -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasIntegratedFormula">
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasIntercept -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasIntercept">
+        <rdfs:domain rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasRatio -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasRatio">
+        <rdfs:domain rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasSymbol -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasSymbol">
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#hasValue">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Accumulation -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Accumulation">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Phenomenon"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Constant -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Constant">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ModelVariable"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dimension -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dimension"/>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#FlowParameter -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#FlowParameter">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#FlowPattern -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#FlowPattern">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Phenomenon"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#MassEquilibriumPhenomenon -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#MassEquilibriumPhenomenon">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Phenomenon"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#MassTransportParameter -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#MassTransportParameter">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#MassTransportPhenomenon -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#MassTransportPhenomenon">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Phenomenon"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ModelVariable -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ModelVariable"/>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#OperationParameter -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#OperationParameter">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Parameter -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Parameter">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ModelVariable"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Phenomenon -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Phenomenon"/>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#PhysicsParameter -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#PhysicsParameter">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#RateVariable -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#RateVariable">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Variable"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionParameter -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionParameter">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionPhenomenon -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionPhenomenon">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Phenomenon"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#StateVariable -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#StateVariable">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Variable"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#StructureParameter -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#StructureParameter">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Variable -->
+
+    <owl:Class rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Variable">
+        <rdfs:subClassOf rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ModelVariable"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Activation_Energy -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Activation_Energy">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionParameter"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Dimension"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasUnit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#kJ_per_mol"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><msub><mi>E</mi><mtext>a</mtext></msub></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Arrhenius -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Arrhenius">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionPhenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Arrhenius_Log10 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Arrhenius_Log10">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionPhenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Arrhenius_Referenced_to_293K -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Arrhenius_Referenced_to_293K">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionPhenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Axial_Position -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Axial_Position">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#StateVariable"/>
+        <hasUnit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#m"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>x</mi></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#CSTR -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#CSTR">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Accumulation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#StateVariable"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Species_Dimension"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasUnit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#mol_per_L"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>c</mi></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration_Delta_Law_with_CSTR -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration_Delta_Law_with_CSTR">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Flow_Rate"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Initial_Concentration"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Volume"/>
+        <hasOptionalModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dispersion_Rate"/>
+        <hasOptionalModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Mixing_Rate"/>
+        <hasOptionalModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate"/>
+        <hasOptionalModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stoichiometric_Coefficient"/>
+        <isAssociatedWith rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#CSTR"/>
+        <hasFormula rdf:parseType="Literal"><math><mrow><mfrac><mi>V</mi><mrow><mo>∑</mo><mi>q</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mo>[</mo><mrow><mo>matmul</mo><msub><mi>r</mi><mtext>r</mtext></msub><mi>ν</mi></mrow><mo>]</mo></mrow><mo>+</mo><mrow><mo>[</mo><msub><mi>r</mi><mtext>m</mtext></msub><mo>]</mo></mrow><mo>+</mo><mrow><mo>[</mo><msub><mi>r</mi><mtext>d</mtext></msub><mo>]</mo></mrow><mo>)</mo></mrow></mrow></math></hasFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration_Derivative_Law_with_Continuous -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration_Derivative_Law_with_Continuous">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+        <hasDifferentialModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Axial_Position"/>
+        <hasIntegralInitialValue rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Initial_Concentration"/>
+        <hasIntegralModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration"/>
+        <hasIntegralUpperLimit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Length"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Flow_Velocity"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Initial_Concentration"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Length"/>
+        <hasOptionalModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dispersion_Rate"/>
+        <hasOptionalModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Mixing_Rate"/>
+        <hasOptionalModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate"/>
+        <hasOptionalModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stoichiometric_Coefficient"/>
+        <isAssociatedWith rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Continuous"/>
+        <hasFormula rdf:parseType="Literal"><math><mrow><mfrac><mn>1</mn><mi>u</mi></mfrac><mrow><mo>(</mo><mrow><mo>[</mo><mrow><mo>matmul</mo><msub><mi>r</mi><mtext>r</mtext></msub><mi>ν</mi></mrow><mo>]</mo></mrow><mo>+</mo><mrow><mo>[</mo><msub><mi>r</mi><mtext>m</mtext></msub><mo>]</mo></mrow><mo>+</mo><mrow><mo>[</mo><msub><mi>r</mi><mtext>d</mtext></msub><mo>]</mo></mrow><mo>)</mo></mrow></mrow></math></hasFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration_Derivative_over_Axis -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration_Derivative_over_Axis">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#StateVariable"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Species_Dimension"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasLaw rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration_Derivative_Law_with_Continuous"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mfrac><mrow><mo>d</mo><mi>c</mi></mrow><mrow><mo>d</mo><mi>x</mi></mrow></mfrac></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration_Power_Dependence -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration_Power_Dependence">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionPhenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration_Secondary_Derivative_Along_Axis -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration_Secondary_Derivative_Along_Axis">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#StateVariable"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Species_Dimension"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mfrac><mrow><msup><mo>∂</mo><mn>2</mn></msup><mi>c</mi></mrow><mrow><mo>∂</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Continuous -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Continuous">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Accumulation"/>
+        <relatesToFlowPattern rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Tubular_Flow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Diffusion_Coefficient -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Diffusion_Coefficient">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#MassTransportParameter"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Species_Dimension"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasUnit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#squared_m_per_s"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>D</mi></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dispersion_Coefficient -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dispersion_Coefficient">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#MassTransportParameter"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Species_Dimension"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasLaw rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dispersion_Coefficient_Law_with_Tubular_Flow_by_Taylor"/>
+        <hasUnit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#squared_m_per_s"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><msub><mi>D</mi><mtext>ax</mtext></msub></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dispersion_Coefficient_Law_with_Tubular_Flow_by_Taylor -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dispersion_Coefficient_Law_with_Tubular_Flow_by_Taylor">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Diffusion_Coefficient"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Flow_Velocity"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Radius"/>
+        <isAssociatedWith rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Tubular_Flow"/>
+        <hasFormula rdf:parseType="Literal"><math><mrow><mfrac><mrow><msup><mi>r</mi><mn>2</mn></msup><msup><mi>u</mi><mn>2</mn></msup></mrow><mrow><mn>48</mn><mi>D</mi></mrow></mfrac></mrow></math></hasFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dispersion_Rate -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dispersion_Rate">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#RateVariable"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasLaw rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dispersion_Rate_Law_with_Axial_Dispersion"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><msub><mi>r</mi><mtext>d</mtext></msub></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dispersion_Rate_Law_with_Axial_Dispersion -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dispersion_Rate_Law_with_Axial_Dispersion">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration_Secondary_Derivative_Along_Axis"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dispersion_Coefficient"/>
+        <isAssociatedWith rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Perfect_Radial_and_Axial_Mixing"/>
+        <hasFormula rdf:parseType="Literal"><math><mrow><mi>D</mi><mfrac><mrow><msup><mo>∂</mo><mn>2</mn></msup><mi>c</mi></mrow><mrow><mo>∂</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow></math></hasFormula>
+        <hasIntegratedFormula rdf:parseType="Literal"><math><mrow><mfrac><mn>1</mn><msub><mi>D</mi><mtext>ax</mtext></msub></mfrac><mrow><mo>(</mo><mrow><mi>u</mi><mfrac><mrow><mtext>d</mtext><mi>c</mi></mrow><mrow><mtext>d</mtext><mi>z</mi></mrow></mfrac></mrow><mo>−</mo><mrow><mo>[</mo><mrow><mo>matmul</mo><msub><mi>r</mi><mtext>r</mtext></msub><mi>ν</mi></mrow><mo>]</mo></mrow><mo>−</mo><mrow><mo>[</mo><msub><mi>r</mi><mtext>m</mtext></msub><mo>]</mo></mrow><mo>−</mo><mrow><mo>[</mo><msub><mi>r</mi><mtext>t</mtext></msub><mo>]</mo></mrow><mo>)</mo></mrow></mrow></math></hasIntegratedFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Flow_Rate -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Flow_Rate">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#OperationParameter"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasUnit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#mL_per_min"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>q</mi></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Flow_Velocity -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Flow_Velocity">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#FlowParameter"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasLaw rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Flow_Velocity_Law_with_Tubular_Flow"/>
+        <hasUnit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#m_per_s"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>u</mi></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Flow_Velocity_Law_with_Tubular_Flow -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Flow_Velocity_Law_with_Tubular_Flow">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Flow_Rate"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Radius"/>
+        <isAssociatedWith rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Tubular_Flow"/>
+        <hasFormula rdf:parseType="Literal"><math><mrow><mfrac><mrow><mo>∑</mo><mi>q</mi></mrow><mrow><mn>π</mn><msup><mi>r</mi><mn>2</mn></msup></mrow></mfrac></mrow></math></hasFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Gas_Constant -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Gas_Constant">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Constant"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>R</mi></mrow></math></hasSymbol>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.314</hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Gas_Dimension -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Gas_Dimension">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dimension"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Initial_Concentration -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Initial_Concentration">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#OperationParameter"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Species_Dimension"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasUnit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#mol_per_L"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><msub><mi>c</mi><mtext>0</mtext></msub></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#J_per_mol -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#J_per_mol">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mtext>J</mtext><mtext>/</mtext><mtext>mol</mtext></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#K -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#K">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mtext>K</mtext></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Length -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Length">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#StructureParameter"/>
+        <hasUnit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#m"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>l</mi></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Mixing_Rate -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Mixing_Rate">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#RateVariable"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Species_Dimension"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><msub><mi>r</mi><mtext>m</mtext></msub></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Molecular_Weight -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Molecular_Weight">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#PhysicsParameter"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Species_Dimension"/>
+        <hasUnit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#g_per_mol"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>M</mi></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Partial_Order -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Partial_Order">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionParameter"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Dimension"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Species_Dimension"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>n</mi></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Perfect_Radial_and_Axial_Mixing -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Perfect_Radial_and_Axial_Mixing">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#MassTransportPhenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Perfect_Radial_and_No_Axial_Mixing -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Perfect_Radial_and_No_Axial_Mixing">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#MassTransportPhenomenon"/>
+        <relatesToFlowPattern rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Tubular_Flow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Plain_Rate_Constant -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Plain_Rate_Constant">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionPhenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Pre-exponential_Factor -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Pre-exponential_Factor">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionParameter"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Dimension"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>A</mi></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Radius -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Radius">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#StructureParameter"/>
+        <hasUnit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#m"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>r</mi></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Rate_Constant -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Rate_Constant">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionParameter"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Dimension"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>k</mi></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Dimension -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Dimension">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dimension"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#RateVariable"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Dimension"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension"/>
+        <hasLaw rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Arrhenius"/>
+        <hasLaw rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Arrhenius_Log10"/>
+        <hasLaw rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Concentration_Power_Dependence"/>
+        <hasLaw rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Plain_Rate_Constant"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><msub><mi>r</mi><mtext>r</mtext></msub></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Arrhenius -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Arrhenius">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Activation_Energy"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Gas_Constant"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Pre-exponential_Factor"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Temperature"/>
+        <isAssociatedWith rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Arrhenius"/>
+        <hasFormula rdf:parseType="Literal"><math><mrow><mi>A</mi><mrow><mo>exp</mo><mrow><mo>(</mo><mo>−</mo><mfrac><msub><mi>E</mi><mtext>a</mtext></msub><mrow><mi>R</mi><mi>T</mi></mrow></mfrac><mo>)</mo></mrow></mrow></mrow></math></hasFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Arrhenius_Log10 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Arrhenius_Log10">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Activation_Energy"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Gas_Constant"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Pre-exponential_Factor"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Temperature"/>
+        <isAssociatedWith rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Arrhenius_Log10"/>
+        <hasFormula rdf:parseType="Literal"><math><mrow><msup><mn>10</mn><mi>A</mi></msup><mrow><mo>exp</mo><mrow><mo>(</mo><mo>−</mo><mfrac><msub><mi>E</mi><mtext>a</mtext></msub><mrow><mi>R</mi><mi>T</mi></mrow></mfrac><mo>)</mo></mrow></mrow></mrow></math></hasFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Arrhenius_Referenced_to_293K -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Arrhenius_Referenced_to_293K">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Activation_Energy"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Gas_Constant"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Pre-exponential_Factor"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Temperature"/>
+        <isAssociatedWith rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Arrhenius_Referenced_to_293K"/>
+        <hasFormula rdf:parseType="Literal"><math><mrow><mi>A</mi><mrow><mo>exp</mo><mrow><mo>(</mo><mo>−</mo><mfrac><msub><mi>E</mi><mtext>a</mtext></msub><mi>R</mi></mfrac><mrow><mo>(</mo><mfrac><mn>1</mn><mi>T</mi></mfrac><mo>−</mo><mfrac><mn>1</mn><mn>293</mn></mfrac><mo>)</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></hasFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Concentration_Power_Dependence -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Concentration_Power_Dependence">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Partial_Order"/>
+        <isAssociatedWith rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Concentration_Power_Dependence"/>
+        <hasFormula rdf:parseType="Literal"><math><mrow><mrow><mo>∏</mo><msup><mi>c</mi><mi>n</mi></msup></mrow></mrow></math></hasFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Plain_Rate_Constant -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Rate_Law_with_Plain_Rate_Constant">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Law"/>
+        <hasModelVariable rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Rate_Constant"/>
+        <isAssociatedWith rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Plain_Rate_Constant"/>
+        <hasFormula rdf:parseType="Literal"><math><mrow><mi>k</mi></mrow></math></hasFormula>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Solid_Dimension -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Solid_Dimension">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dimension"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Species_Dimension -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Species_Dimension">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dimension"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stoichiometric_Coefficient -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stoichiometric_Coefficient">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#ReactionParameter"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Reaction_Dimension"/>
+        <hasDimension rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Species_Dimension"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>ν</mi></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Stream_Dimension">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Dimension"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Temperature -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Temperature">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#OperationParameter"/>
+        <hasUnit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#oC"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mi>T</mi></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Tubular_Flow -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Tubular_Flow">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#FlowPattern"/>
+        <relatesToMassTransportPhenomenon rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Perfect_Radial_and_Axial_Mixing"/>
+        <relatesToMassTransportPhenomenon rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Perfect_Radial_and_No_Axial_Mixing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Two_Compartment -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Two_Compartment">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#FlowPattern"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Volume -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Volume">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#StructureParameter"/>
+        <hasUnit rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#cubic_m"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mtext>V</mtext></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Well_Mixed -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Well_Mixed">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#FlowPattern"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#cubic_m -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#cubic_m">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mtext>m</mtext><mn>3</mn></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#cubic_m_per_s -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#cubic_m_per_s">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><msup><mtext>m</mtext><mn>3</mn></msup><mtext>/</mtext><mtext>s</mtext></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#g_per_mol -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#g_per_mol">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mtext>g</mtext><mtext>/</mtext><mtext>mol</mtext></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#kJ_per_mol -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#kJ_per_mol">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <hasMetric rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#J_per_mol"/>
+        <hasRatio rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1000.0</hasRatio>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mtext>kJ</mtext><mtext>/</mtext><mtext>mol</mtext></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#m -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#m">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mtext>m</mtext></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#mL_per_min -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#mL_per_min">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <hasMetric rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#cubic_m_per_s"/>
+        <hasRatio rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.6666666E-8</hasRatio>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mtext>mL</mtext><mtext>/</mtext><mtext>min</mtext></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#m_per_s -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#m_per_s">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mtext>m</mtext><mtext>/</mtext><mtext>s</mtext></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#mol_per_L -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#mol_per_L">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><mtext>mol</mtext><mtext>/</mtext><mtext>L</mtext></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#oC -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#oC">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <hasMetric rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#K"/>
+        <hasIntercept rdf:datatype="http://www.w3.org/2001/XMLSchema#float">273.15</hasIntercept>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><msup><mtext></mtext><mtext>o</mtext></msup><mtext>C</mtext></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#squared_m_per_s -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#squared_m_per_s">
+        <rdf:type rdf:resource="https://github.com/zhangsy-ryan/KIDoE/main/ontology/OntoMo.owl#Unit"/>
+        <hasSymbol rdf:parseType="Literal"><math><mrow><msup><mtext>m</mtext><mn>2</mn></msup><mtext>/</mtext><mtext>s</mtext></mrow></math></hasSymbol>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
