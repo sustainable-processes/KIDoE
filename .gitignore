@@ -205,3 +205,15 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Cases
+cases/*
+!cases/snar_single_obj/
+!cases/snar_multi_obj/
+
+# Scripts
+scripts/*
+!scripts/snar_single_obj.py
+!scripts/snar_single_obj_bo.py
+!scripts/snar_multi_obj.py
+!scripts/snar_multi_obj_bo.py

@@ -1,0 +1,18 @@
+file type: process base
+project:
+  name: SNAr Single-Objective Benchmark
+process:
+  inlet:
+    stream 1:
+      solute: 
+      - a
+      - b
+      solvent: ethanol
+  phenomenon:
+    accumulation: CSTR
+    flow pattern: 
+      - Well-mixed
+      - Well-mixed_with_Dead_Volume
+    mass transport: 
+      - Flow_Exchange_with_Dead_Volume
+    mass equilibrium: null

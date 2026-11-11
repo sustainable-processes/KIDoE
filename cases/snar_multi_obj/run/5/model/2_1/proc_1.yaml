@@ -1,0 +1,89 @@
+file type: proc parameterized
+project:
+  name: SNAr Single-Objective Benchmark
+process:
+  inlet:
+    stream 1:
+      solute:
+      - a
+      - b
+      solvent: ethanol
+  phenomenon:
+    accumulation: CSTR
+    flow pattern: Well-mixed_with_Dead_Volume
+    mass transport:
+    - Flow_Exchange_with_Dead_Volume
+    mass equilibrium: null
+  parameter:
+    structure:
+      Volume:
+        unit: cubic_m
+        val: 1.8e-06
+    mass transport:
+      Exchange_Flow_Rate:
+        unit: mL_per_min
+        max: 0.5
+        min: 0.01
+        val: 0.151715
+    flow:
+      Dead_Volume_Ratio:
+        unit: null
+        max: 0.5
+        min: 0.1
+        val: 0.212004
+    operation:
+      Flow_Rate:
+        stream 1:
+          unit: mL_per_min
+          transform: 1.8 / tau
+      Initial_Concentration:
+        stream 1:
+          a:
+            unit: mol_per_L
+            transform: conc_dfnb
+          b:
+            unit: mol_per_L
+            transform: conc_dfnb * equiv_prld
+      Temperature:
+        unit: oC
+        transform: temperature
+    design:
+      conc_dfnb:
+        unit: mol_per_L
+        min: 0.1
+        max: 0.5
+        num: 5
+      equiv_prld:
+        unit: null
+        min: 1.0
+        max: 5.0
+        num: 9
+      tau:
+        unit: min
+        min: 0.5
+        max: 2.0
+        num: 16
+      temperature:
+        unit: oC
+        min: 30.0
+        max: 120.0
+        num: 10
+    measure:
+      Outlet_Concentration:
+        stream 1:
+          a:
+            unit: mol_per_L
+            name: outlet_conc_dfnb
+          c:
+            unit: mol_per_L
+            name: outlet_conc_ortho
+  algorithm:
+    acquisition: ensemble_qnehvi
+  objective:
+    sty:
+      transform: outlet_conc_ortho / tau * 60 * 210.21
+      target: max
+    e-factor:
+      transform: (conc_dfnb * 159.09 + conc_dfnb * equiv_prld * 71.12 + 789 - outlet_conc_ortho
+        * 210.21) / ((outlet_conc_ortho + 0.0001) * 210.21)
+      target: min

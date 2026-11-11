@@ -1,0 +1,20 @@
+file type: chemistry base
+project:
+  name: SNAr Single-Objective Benchmark
+chemistry:
+  species:
+    substrate:
+      a:
+        name: 2,4-difluoro-1-nitrobenzene
+        smiles: O=[N+](c1c(F)cc(F)cc1)[O-]
+    reagent:
+      b: 
+        name: pyrrolidine
+        smiles: C1CCNC1
+    product:
+      c: 
+        name: 1-(5-fluoro-2-nitrophenyl)pyrrolidine
+        smiles: O=[N+](c1c(N2CCCC2)cc(F)cc1)[O-]
+  reaction:
+    main:
+      - a + b > c

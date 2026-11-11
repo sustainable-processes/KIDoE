@@ -1,0 +1,110 @@
+file type: chemistry candidate
+project:
+  name: SNAr Single-Objective Benchmark
+chemistry:
+  species:
+    substrate:
+      a:
+        name: 2,4-difluoro-1-nitrobenzene
+        smiles: O=[N+]([O-])c1ccc(F)cc1F
+    reagent:
+      b:
+        name: pyrrolidine
+        smiles: C1CCNC1
+    product:
+      c:
+        name: 1-(5-fluoro-2-nitrophenyl)pyrrolidine
+        smiles: O=[N+]([O-])c1ccc(F)cc1N1CCCC1
+    intermediate: null
+    byproduct:
+      d:
+        name: fluoride
+        smiles: '[F-]'
+    side product:
+      e:
+        name: 1-(3-fluoro-4-nitrophenyl)pyrrolidine
+        smiles: O=[N+]([O-])c1ccc(N2CCCC2)cc1F
+      f:
+        name: 1-(4-nitro-3-pyrrolidin-1-ylphenyl)pyrrolidine
+        smiles: O=[N+]([O-])c1ccc(N2CCCC2)cc1N1CCCC1
+  reaction:
+    main:
+    - a + b > c + d
+    side:
+    - a + b > d + e
+    - b + c > d + f
+  kinetics:
+    a + b > c + d:
+    - Arrhenius_Log10
+    - Concentration_Power_Dependence
+    a + b > d + e:
+    - Arrhenius_Log10
+    - Concentration_Power_Dependence
+    b + c > d + f:
+    - Arrhenius_Log10
+    - Concentration_Power_Dependence
+  parameter:
+    constant:
+      Gas_Constant:
+        unit: null
+        val: 8.314
+    a + b > c + d:
+      Activation_Energy:
+        stream 1:
+          unit: kJ_per_mol
+          min: 30
+          max: 70
+          val: 40.0007
+      Pre-exponential_Factor:
+        stream 1:
+          unit: null
+          min: 2
+          max: 7
+          val: 6.00541
+      Partial_Order:
+        a:
+          unit: null
+          val: 1
+        b:
+          unit: null
+          val: 1
+    a + b > d + e:
+      Activation_Energy:
+        stream 1:
+          unit: kJ_per_mol
+          min: 30
+          max: 70
+          val: 30.0731
+      Pre-exponential_Factor:
+        stream 1:
+          unit: null
+          min: 2
+          max: 7
+          val: 3.33868
+      Partial_Order:
+        a:
+          unit: null
+          val: 1
+        b:
+          unit: null
+          val: 1
+    b + c > d + f:
+      Activation_Energy:
+        stream 1:
+          unit: kJ_per_mol
+          min: 30
+          max: 70
+          val: 61.5014
+      Pre-exponential_Factor:
+        stream 1:
+          unit: null
+          min: 2
+          max: 7
+          val: 6.67622
+      Partial_Order:
+        b:
+          unit: null
+          val: 1
+        c:
+          unit: null
+          val: 1
