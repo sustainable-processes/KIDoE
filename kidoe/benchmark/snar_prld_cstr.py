@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 from scipy.integrate import solve_ivp, trapezoid
 
+
 class SnarPyrrolidineCSTRBenchmark:
     """Benchmark of a pyrrolidine nucleophilic aromatic substitution (SNAr) reaction
 

@@ -1237,9 +1237,9 @@ class ModelAgent:
                 f.write('        res = pool.map(simulate, param_dicts)\n')
                 f.write('        pickle.dump(res, open(os.path.join('
                         'os.path.dirname(__file__), \'res.pkl\'), \'wb\'))\n')
-            with open(os.path.join(temp_dir, 'simulate.py'), 'r') as f:
-                print(''.join(f.readlines()))
-                exit(0)
+            # with open(os.path.join(temp_dir, 'simulate.py'), 'r') as f:
+            #     print(''.join(f.readlines()))
+            #     exit(0)
             os.system(f'python {temp_dir}/simulate.py')
             with open(f'{temp_dir}/res.pkl', 'rb') as f:
                 res = pickle.load(f)

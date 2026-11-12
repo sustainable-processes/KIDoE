@@ -10908,7 +10908,7 @@ uspto_reaction_templates = {
         }
     },
     ("Amide bond formation",): {
-        "Reaction with tetramethylchloroformamidinium and N-methylimidazole": {
+        "Reaction with TCFH and NMI": {
             "Reagent": [
                 "O=C[O;H1]",
                 "[N;+0;H1,H2]",
@@ -10947,7 +10947,7 @@ uspto_reaction_templates = {
                 }
             },
         },
-        "Reaction with tetramethylisouronium and tertiary amine": {
+        "Reaction with HATU/HBTU and tertiary amine": {
             "Reagent": [
                 "O=C[O;H1]",
                 "[N;+0;H1,H2]",
@@ -10986,7 +10986,7 @@ uspto_reaction_templates = {
                 }
             },
         },
-        "Reaction with propylphosphonic anhydride and tertiary amine": {
+        "Reaction with T3P and DIPEA": {
             "Reagent": [
                 "O=C[O;H1]",
                 "[N;+0;H1,H2]",

@@ -1,9 +1,9 @@
 import re
+from typing import Literal, get_args
 
 import rdflib
 import yaml
 from pydantic import BaseModel, field_serializer
-from typing import Literal, get_args
 
 PhenomenonClass = Literal[
     'Accumulation',

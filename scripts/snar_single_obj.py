@@ -11,8 +11,8 @@ from scipy.stats.qmc import LatinHypercube, scale
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from kidoe.kidoe.agent.model_agent import ModelAgent
-from kidoe.kidoe.benchmark import SnarPyrrolidineCSTRBenchmark
+from kidoe.agent.model_agent import ModelAgent
+from kidoe.benchmark import SnarPyrrolidineCSTRBenchmark
 
 N = 6
 seed = 12
