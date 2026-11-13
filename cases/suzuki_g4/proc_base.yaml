@@ -1,0 +1,19 @@
+file type: process base
+project:
+  name: Suzuki-Miyaura G3 Benchmark
+process:
+  inlet:
+    stream 1:
+      solute: 
+      - a
+      - b
+      - c
+      - e
+      - h
+      - i
+      solvent: dioxane:water(4:1)
+  phenomenon:
+    accumulation: Continuous
+    flow pattern: Tubular_Laminar_Flow
+    mass transport: Perfect_Radial_and_No_Axial_Mixing
+    mass equilibrium: null

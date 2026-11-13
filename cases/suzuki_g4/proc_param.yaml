@@ -1,0 +1,95 @@
+file type: proc parameterized
+project:
+  name: Suzuki-Miyaura G3 Benchmark
+process:
+  inlet:
+    stream 1:
+      solute:
+      - a
+      - b
+      - c
+      - e
+      - h
+      - i
+      solvent: dioxane:water(4:1)
+  phenomenon:
+    accumulation: Continuous
+    flow pattern: Tubular_Laminar_Flow
+    mass transport: Perfect_Radial_and_No_Axial_Mixing
+    mass equilibrium: null
+  parameter:
+    structure:
+      Length:
+        unit: m
+        val: 5.093
+      Radius:
+        unit: m
+        val: 0.00125
+    operation:
+      Initial_Concentration:
+        stream 1:
+          a:
+            unit: mol_per_L
+            transform: conc_sub
+          b:
+            unit: mol_per_L
+            transform: conc_sub * coupl_part_mol_eq
+          c:
+            unit: mol_per_L
+            transform: conc_sub * cat_loading / 100
+          e:
+            unit: mol_per_L
+            transform: conc_sub * base_mol_eq
+          h:
+            unit: mol_per_L
+            transform: conc_o2
+          i:
+            unit: mol_per_L
+            transform: conc_sub
+      Flow_Rate:
+        stream 1:
+          unit: mL_per_min
+          transform: 25 / residence_time
+      Temperature:
+        unit: oC
+        transform: temperature
+    design:
+      conc_sub:
+        val: 0.01
+      coupl_part_mol_eq:
+        min: 1.0
+        max: 1.5
+        num: 6
+      cat_loading:
+        min: 0.5
+        max: 2.5
+        num: 5
+      base_mol_eq:
+        min: 1.0
+        max: 2.0
+        num: 3
+      residence_time:
+        min: 15
+        max: 90
+        num: 4
+      temperature:
+        min: 80
+        max: 180
+        num: 6
+      conc_o2:
+        val: 0.0014
+    measure:
+      Outlet_Concentration:
+        stream 1:
+          a:
+            unit: mol_per_L
+            name: outlet_conc_sub
+          j:
+            unit: mol_per_L
+            name: outlet_conc_prod
+  algorithm:
+    acquisition: ensemble_ucb
+  objective:
+    yield:
+      transform: outlet_conc_prod / conc_arbr
+      target: max

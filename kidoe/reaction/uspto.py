@@ -927,7 +927,75 @@ uspto_reaction_templates = {
                     "Description": "Reduction by borohydride or aluminum hydride",
                 },
             },
-        }
+        },
+        "Reaction with formic acid": {
+            "Reagent": [
+                "[#6]=[#8]",
+                "[#7]",
+                "[O;H1]-[C;H1]=[O]",
+            ],
+            "Exclude_reagent": None,
+            "Stages": {
+                0: {
+                    "Templates": [
+                        # aldehydes only, not formic acid, formates or formamides
+                        "[C;H1;+0;!$(C-[!#6;!#1]):1]=[O;+0:2]>>[C;H1;+0:1]=[OH1;+1:2]",
+                    ],
+                    "pKa": [{"A": 5}],
+                    "Description": "Protonation of aldehyde",
+                },
+                1: {
+                    "Templates": [
+                        "[C;H1;+0:1]=[OH1;+1:2].[N;H3;+0:3]>>[N;H3;+1:3]-[C;H1;+0:1]-[OH1;+0:2]",
+                        "[C;H1;+0:1]=[OH1;+1:2].[N;H2;+0:3]>>[N;H2;+1:3]-[C;H1;+0:1]-[OH1;+0:2]",
+                        "[C;H1;+0:1]=[OH1;+1:2].[N;H1;+0:3]>>[N;H1;+1:3]-[C;H1;+0:1]-[OH1;+0:2]",
+                    ],
+                    "pKa": [None, None, None],
+                    "Description": "Addition of amine",
+                },
+                2: {
+                    "Templates": [
+                        "[#7;H3;+1:3]-[C;H1;+0:1]-[OH1;+0:2]>>[#7;H2;+0:3]-[C;H1;+0:1]-[OH1;+0:2]",
+                        "[#7;H2;+1:3]-[C;H1;+0:1]-[OH1;+0:2]>>[#7;H1;+0:3]-[C;H1;+0:1]-[OH1;+0:2]",
+                        "[#7;H1;+1:3]-[C;H1;+0:1]-[OH1;+0:2]>>[#7;H0;+0:3]-[C;H1;+0:1]-[OH1;+0:2]",
+                    ],
+                    "pKa": [{"B": 4}, {"B": 4}, {"B": 4}],
+                    "Description": "Deprotonation of amine",
+                },
+                3: {
+                    "Templates": [
+                        "[#7;+0:3]-[C;H1;+0:1]-[OH1;+0:2]>>[#7;+0:3]-[C;H1;+0:1]-[OH2;+1:2]",
+                    ],
+                    "pKa": [{"A": 5}],
+                    "Description": "Protonation of alcohol",
+                },
+                4: {
+                    "Templates": [
+                        "[#7;H2;+0:3]-[C;H1;+0:1]-[OH2;+1:2]>>[#7;H2;+1:3]=[C;H1;+0:1].[OH2;+0:2]",
+                        "[#7;H1;+0:3]-[C;H1;+0:1]-[OH2;+1:2]>>[#7;H1;+1:3]=[C;H1;+0:1].[OH2;+0:2]",
+                        "[#7;H0;+0:3]-[C;H1;+0:1]-[OH2;+1:2]>>[#7;H0;+1:3]=[C;H1;+0:1].[OH2;+0:2]",
+                    ],
+                    "pKa": [None, None, None],
+                    "Description": "Water leaves",
+                },
+                5: {
+                    "Templates": [
+                        "[#7;H1;+1:3]=[C;H1;+0:1].[O;H1;+0:4]-[C;H1;+0:5]=[O;+0:6]>>[#7;H2;+1:3]-[C;H2;+0:1].[O;H0;+0:4]=[C;H0;+0:5]=[O;+0:6]",
+                        "[#7;H0;+1:3]=[C;H1;+0:1].[O;H1;+0:4]-[C;H1;+0:5]=[O;+0:6]>>[#7;H1;+1:3]-[C;H2;+0:1].[O;H0;+0:4]=[C;H0;+0:5]=[O;+0:6]",
+                    ],
+                    "pKa": [None, None],
+                    "Description": "Hydride transfer from formic acid, releasing CO2",
+                },
+                6: {
+                    "Templates": [
+                        "[#7;H2;+1:3]-[C;H2;+0:1]>>[#7;H1;+0:3]-[C;H2;+0:1]",
+                        "[#7;H1;+1:3]-[C;H2;+0:1]>>[#7;H0;+0:3]-[C;H2;+0:1]",
+                    ],
+                    "pKa": [{"B": 4}, {"B": 4}],
+                    "Description": "Deprotonation of amine",
+                },
+            },
+        },
     },
     ("N-Boc protection",): {
         "Reaction": {
@@ -2958,6 +3026,7 @@ uspto_reaction_templates = {
             "Reagent": [
                 "[C]=[O]",
                 "[N]",
+                "[Al,B;-1]",
             ],
             "Exclude_reagent": None,
             "Stages": {

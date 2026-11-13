@@ -1,0 +1,41 @@
+file type: chemistry base
+project:
+  name: Suzuki-Miyaura G3 Benchmark
+chemistry:
+  species:
+    substrate:
+      a:
+        name: 4-bromo-6-fluoroisoquinoline
+        smiles: Fc1ccc2cncc(Br)c2c1
+    reagent:
+      b: 
+        name: 5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)-1H-pyrrolo[2,3-b]pyridine
+        smiles: CC1(C)OB(c2cnc3[nH]ccc3c2)OC1(C)C
+      c:
+        name: cataCXium A Pd G3
+        smiles: '[Pd]'
+      d:
+        name: hydroxide
+        smiles: '[OH-]'
+      e:
+        name: carbonate
+        smiles: O=C([O-])[O-]
+      f:
+        name: hydrogen carbonate
+        smiles: O=C([O-])O
+      g:
+        name: carbonic acid
+        smiles: O=C(O)O
+      h:
+        name: oxygen
+        smiles: '[O]=[O]'
+      i:
+        name: water
+        smiles: 'O'
+    product:
+      j: 
+        name: 6-fluoro-4-(1H-pyrrolo[2,3-b]pyridin-5-yl)isoquinoline
+        smiles: Fc1ccc2cncc(-c3cnc4[nH]ccc4c3)c2c1
+  reaction:
+    main:
+      - a + b + c + 2 d > c + j

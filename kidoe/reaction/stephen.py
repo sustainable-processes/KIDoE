@@ -651,7 +651,7 @@ stephen_reaction_templates = {
                 },
                 1: {
                     'Templates': [
-                        '[OH1;-1:8].[CX2;H1:1]([H:7])#[CX2:2]>>[O;+0:8]([H:7]).[C;H0;-1:1]#[CX2:2]',
+                        '[OH1;-1:8].[CX2;H1:1]#[CX2:2]>>[OH2;+0:8].[C;H0;-1:1]#[CX2:2]',
                     ],
                     'pKa': [None],
                     'Description':
@@ -1758,7 +1758,7 @@ stephen_reaction_templates = {
             'Stages': {
                 0: {
                     'Templates': [
-                        '[OH1;-1:8].[CX2;H1:1]([H:7])#[CX2:2]>>[O;+0:8]([H:7]).[C;H0;-1:1]#[CX2:2]',
+                        '[OH1;-1:8].[CX2;H1:1]#[CX2:2]>>[OH2;+0:8].[C;H0;-1:1]#[CX2:2]',
                     ],
                     'Description':
                     'Deprotonation of the first equivalent of the terminal alkyne by base, giving the acetylide anion',

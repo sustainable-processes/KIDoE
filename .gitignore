@@ -210,6 +210,8 @@ __marimo__/
 cases/*
 !cases/snar_single_obj/
 !cases/snar_multi_obj/
+!cases/suzuki_g3/
+!cases/suzuki_g4/
 
 # Scripts
 scripts/*
@@ -217,3 +219,6 @@ scripts/*
 !scripts/snar_single_obj_bo.py
 !scripts/snar_multi_obj.py
 !scripts/snar_multi_obj_bo.py
+!scripts/lhe.py
+!scripts/suzuki_g3_profile.py
+!scripts/suzuki_g4_profile.py

@@ -1,6 +1,7 @@
 import itertools
 import logging
 import os
+import re
 import shutil
 import string
 import sys
@@ -197,6 +198,172 @@ def _drop_seen_rxns(mechanism_res: dict, seen_rxns: set[str]) -> dict:
     return {'overall': overall, 'overall_path': overall_path, 'stages': stages}
 
 
+# Ertl functional group detection (P. Ertl, J. Cheminform. 2017, 9:36), adapted
+# from RDKit Contrib/IFG. Besides all heteroatoms, these carbons are marked.
+_ERTL_PATTERNS = [
+    Chem.MolFromSmarts(sma)
+    for sma in (
+        # atoms in non-aromatic double or triple bonds to a heteroatom
+        'A=,#[!#6]',
+        # non-aromatic carbon-carbon double or triple bonds
+        'C=,#C',
+        # acetal-type sp3 carbons bonded to two singly bonded O, N or S
+        '[CX4]([O,N,S;!$(*=,#*)])[O,N,S;!$(*=,#*)]',
+        # three-membered O, N or S heterocycles
+        '[O,N,S]1CC1',
+    )
+]
+
+# Named functional groups, most specific first. A group takes the first name
+# whose match covers all its atoms and otherwise only its neighbouring carbons.
+_FG_PATTERNS = [
+    (name, Chem.MolFromSmarts(sma))
+    for name, sma in (
+        ('carboxylic acid', '[CX3](=O)[OX2H1]'),
+        ('carboxylate', '[CX3](=O)[OX1-]'),
+        ('acyl halide', '[CX3](=O)[F,Cl,Br,I]'),
+        ('anhydride', '[CX3](=O)[OX2][CX3]=O'),
+        ('ester', '[#6][CX3](=O)[OX2H0][#6]'),
+        ('urea', '[NX3][CX3](=O)[NX3]'),
+        ('carbamate', '[NX3][CX3](=O)[OX2]'),
+        ('amide', '[CX3](=O)[NX3]'),
+        ('aldehyde', '[CX3H1]=O'),
+        ('ketone', '[#6][CX3](=O)[#6]'),
+        ('nitrile', '[CX2]#[NX1]'),
+        ('nitro', '[NX3+](=O)[O-]'),
+        ('isocyanate', '[NX2]=C=O'),
+        ('azide', '[NX2]=[NX2+]=[NX1-]'),
+        ('imine', '[CX3]=[NX2]'),
+        ('sulfonamide', '[SX4](=O)(=O)[NX3]'),
+        ('sulfonyl halide', '[SX4](=O)(=O)[F,Cl,Br,I]'),
+        ('sulfonate', '[SX4](=O)(=O)[OX2,OX1-]'),
+        ('sulfone', '[#6][SX4](=O)(=O)[#6]'),
+        ('sulfoxide', '[#6][SX3](=O)[#6]'),
+        ('thiol', '[SX2H1]'),
+        ('thioether', '[#6][SX2][#6]'),
+        ('boronic ester', '[BX3](O[#6])O[#6]'),
+        ('boronic acid', '[BX3]([OH1])[OH1]'),
+        ('epoxide', '[OX2]1[CX4][CX4]1'),
+        ('aziridine', '[NX3]1[CX4][CX4]1'),
+        ('acetal', '[CX4]([OX2])[OX2]'),
+        ('primary amine', '[NX3;H2][#6]'),
+        ('secondary amine', '[NX3;H1]([#6])[#6]'),
+        ('tertiary amine', '[NX3;H0]([#6])([#6])[#6]'),
+        ('ammonium', '[NX4+]'),
+        ('alcohol', '[OX2H1][CX4]'),
+        ('phenol', '[OX2H1]c'),
+        ('ether', '[OD2]([#6])[#6]'),
+        ('aryl halide', '[F,Cl,Br,I]c'),
+        ('alkyl halide', '[F,Cl,Br,I][CX4]'),
+        ('alkene', '[CX3]=[CX3]'),
+        ('alkyne', '[CX2]#[CX2]'),
+        ('aromatic NH', '[nH]'),
+        ('aromatic N', 'n'),
+        ('aromatic O', 'o'),
+        ('aromatic S', 's'),
+    )
+]
+
+
+def _ertl_groups(mol: Mol) -> list[set[int]]:
+    """Find functional groups as sets of connected marked atoms (Ertl)."""
+    marked = {a.GetIdx() for a in mol.GetAtoms() if a.GetAtomicNum() not in (1, 6)}
+    for pat in _ERTL_PATTERNS:
+        for match in mol.GetSubstructMatches(pat):
+            marked.update(match)
+    groups = []
+    while marked:
+        stack = [marked.pop()]
+        group = set(stack)
+        while stack:
+            for nbr in mol.GetAtomWithIdx(stack.pop()).GetNeighbors():
+                idx = nbr.GetIdx()
+                if idx in marked:
+                    marked.remove(idx)
+                    group.add(idx)
+                    stack.append(idx)
+        groups.append(group)
+    return groups
+
+
+def _atom_query(atom) -> str:
+    """Atom SMARTS without its map number."""
+    return re.sub(r':\d+\]$', ']', atom.GetSmarts())
+
+
+def _atom_bonds(atom) -> Counter:
+    """Neighbour map numbers and bond SMARTS of an atom, with unspecified
+    bonds counted as single."""
+    return Counter(
+        (bond.GetOtherAtom(atom).GetAtomMapNum(), bond.GetSmarts() or '-')
+        for bond in atom.GetBonds()
+    )
+
+
+def _reacting_atoms(rxn) -> list[list[int]]:
+    """Find the reacting atoms of each reactant template.
+
+    An atom reacts if it is unmapped, missing from the products, or its query
+    (e.g. charge or H count) or bonds change. Unlike
+    `ChemicalReaction.GetReactingAtoms`, this compares SMARTS queries, so
+    changes such as `[N;+0;H1]>>[N;-1;H0]` are found.
+    """
+    prod_atoms = {
+        atom.GetAtomMapNum(): atom
+        for prod in rxn.GetProducts()
+        for atom in prod.GetAtoms()
+        if atom.GetAtomMapNum()
+    }
+    res = []
+    for reactant in rxn.GetReactants():
+        reacting = []
+        for atom in reactant.GetAtoms():
+            prod_atom = prod_atoms.get(atom.GetAtomMapNum())
+            if (
+                prod_atom is None
+                or _atom_query(atom) != _atom_query(prod_atom)
+                or _atom_bonds(atom) != _atom_bonds(prod_atom)
+            ):
+                reacting.append(atom.GetIdx())
+        res.append(reacting)
+    return res
+
+
+def find_functional_groups(mol: Mol) -> list[dict]:
+    """Find all functional groups of a molecule.
+
+    Groups are found with Ertl's algorithm, so no predefined list is needed,
+    and named from `_FG_PATTERNS`. Groups without a name are labelled with
+    their SMILES fragment, including neighbouring carbons.
+
+    Args:
+        mol (Mol): rdkit molecule
+
+    Returns:
+        list[dict]: functional groups, `{'name': name, 'atoms': atom indices}`
+    """
+    res = []
+    for group in _ertl_groups(mol):
+        env = group | {
+            nbr.GetIdx()
+            for idx in group
+            for nbr in mol.GetAtomWithIdx(idx).GetNeighbors()
+            if nbr.GetAtomicNum() == 6
+        }
+        name = next(
+            (
+                fg_name
+                for fg_name, pat in _FG_PATTERNS
+                if any(group <= set(m) <= env for m in mol.GetSubstructMatches(pat))
+            ),
+            None,
+        )
+        if name is None:
+            name = Chem.MolFragmentToSmiles(mol, sorted(env), canonical=True)
+        res.append({'name': name, 'atoms': sorted(group)})
+    return res
+
+
 class ReactionAgent:
     """Reaction agent for generating reaction steps and configs.
 
@@ -294,6 +461,9 @@ class ReactionAgent:
                         except Chem.MolSanitizeException as e:
                             logger.debug('Dropped species %s: %s', smi, e)
                             continue
+                    else:
+                        mol.UpdatePropertyCache(strict=False)
+                        Chem.FastFindRings(mol)
                     smis.append(smi)
                     mols.append(mol)
         return list(dict.fromkeys(stage_rxns)), mols, smis
@@ -338,6 +508,10 @@ class ReactionAgent:
                 curr_mols, curr_smis, stage_dict['Templates'], sanitize
             )
             if i == 0:
+                stage_rxns = [
+                    rxn for rxn in stage_rxns
+                    if all(smi in reagent_smis for smi in _split_rxn(rxn)[0])
+                ]
                 res['stages'][stage] = stage_rxns
                 res['overall'] = list(stage_rxns)
                 res['overall_path'] = [[j] for j in range(len(stage_rxns))]
@@ -420,6 +594,86 @@ class ReactionAgent:
                 break
         return res
 
+    def find_unmatched_groups(
+        self, mol_dict: dict[str, Mol], keys: list[tuple], rxns: list[str]
+    ) -> list[dict]:
+        """Find functional groups that no found reaction accounts for.
+
+        A functional group is matched if either
+        1. one of its atoms is a reacting atom of a template in the given
+           mechanisms (unmapped, or its query or bonds change), matched on the
+           molecule itself, e.g. a deprotonated amine, or
+        2. its type is consumed by a found overall reaction of the molecule,
+           i.e. fewer groups of that type are on the product side. This finds
+           groups that react in later stages, e.g. the leaving halide of SNAr,
+           whose templates only match intermediates.
+        All other groups are unmatched.
+
+        Args:
+            mol_dict (dict[str, Mol]): species name to rdkit molecule
+            keys (list[tuple]): `(name_reaction, mechanism)` keys of
+                `self.templates` whose templates count as matched
+            rxns (list[str]): found overall reaction SMILES
+
+        Returns:
+            list[dict]: unmatched groups, `{'species': name, 'smiles': SMILES,
+                'group': functional group name, 'atoms': atom indices}`
+        """
+        templates = dict.fromkeys(
+            template
+            for name, mechanism in keys
+            for stage_dict in self.templates[name][mechanism]['Stages'].values()
+            for template in stage_dict['Templates']
+        )
+        reacting_pats = []
+        for template in templates:
+            rxn = AllChem.ReactionFromSmarts(template)
+            # copy the templates, as they are freed together with `rxn`
+            reacting_pats.extend(
+                (Chem.Mol(rxn.GetReactantTemplate(i)), reacting)
+                for i, reacting in enumerate(_reacting_atoms(rxn))
+            )
+
+        smi2counts = {}
+
+        def fg_counts(smis: list[str]) -> Counter:
+            counts = Counter()
+            for smi in smis:
+                if smi not in smi2counts:
+                    mol = Chem.MolFromSmiles(smi, sanitize=False)
+                    try:
+                        Chem.SanitizeMol(mol, sanitizeOps=ALL ^ KEKULIZE)
+                    except Chem.MolSanitizeException:
+                        mol.UpdatePropertyCache(strict=False)
+                        Chem.FastFindRings(mol)
+                    smi2counts[smi] = Counter(
+                        fg['name'] for fg in find_functional_groups(mol)
+                    )
+                counts += smi2counts[smi]
+            return counts
+
+        res = []
+        for species, mol in mol_dict.items():
+            smi = Chem.MolToSmiles(mol)
+            covered = set()
+            for pat, reacting in reacting_pats:
+                for match in mol.GetSubstructMatches(pat):
+                    covered.update(match[i] for i in reacting)
+            consumed = set()
+            for rxn in rxns:
+                lhs, rhs = _split_rxn(rxn)
+                if smi in lhs:
+                    consumed.update(fg_counts(lhs) - fg_counts(rhs))
+            for fg in find_functional_groups(mol):
+                if fg['name'] not in consumed and covered.isdisjoint(fg['atoms']):
+                    res.append({
+                        'species': species,
+                        'smiles': smi,
+                        'group': fg['name'],
+                        'atoms': fg['atoms'],
+                    })
+        return res
+
     def infer(self, chem_config: dict, depth: int = 1) -> dict:
         """Infer chemistry configuration file using SMARTS templates.
 
@@ -431,7 +685,9 @@ class ReactionAgent:
             dict: searched reaction dictionary, with keys
                 `main`: found reactions that include a main reaction,
                 `side`: other found reactions,
-                `missed`: main reactions not found.
+                `missed`: main reactions not found,
+                `unmatched`: functional groups of substrates and reagents
+                that no found mechanism reacts, see `find_unmatched_groups`.
                 Each found reaction is `{'template': name reaction(s),
                 'mechanism': mechanism, 'stoichiometric': overall reaction,
                 'mechanistic': [step reactions]}`.
@@ -504,6 +760,24 @@ class ReactionAgent:
             r for r in res['side'] if r['stoichiometric'] not in main_overall_rxns
         ]
         res['missed'] = [m for m in main_rxns if m not in found_main_rxns]
+
+        found_keys = list(dict.fromkeys(
+            key for level_res in reaction_net.values() for key in level_res
+        ))
+        res['unmatched'] = self.find_unmatched_groups(
+            {
+                name: mol_dict[name]
+                for group in ('substrate', 'reagent')
+                for name in species[group]
+            },
+            found_keys,
+            [r['stoichiometric'] for r in res['main'] + res['side']],
+        )
+        for fg in res['unmatched']:
+            logger.warning(
+                'Unmatched functional group: %s (atoms %s) in %s %s',
+                fg['group'], fg['atoms'], fg['species'], fg['smiles'],
+            )
         return res
 
     def update(self, chem_config: dict, chem_res: dict) -> dict:
@@ -759,6 +1033,13 @@ class ReactionAgent:
             rxn for rxn in rxn_res['side'] if rxn not in rxn_res['main']
         ]
         rxn_res['missed'] = reaction_net_res['missed']
+        if reaction_net_res['unmatched']:
+            print('Functional groups not matched by any found reaction:')
+            for fg in reaction_net_res['unmatched']:
+                print(
+                    f"  {fg['species']} ({fg['smiles']}): {fg['group']}, "
+                    f"atoms {fg['atoms']}"
+                )
         config = self.update(config, rxn_res)
         config = self.append_default_kinetics(config)
         with open(out_chem_cfg_path, 'w') as f:
